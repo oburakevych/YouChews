@@ -1,0 +1,89 @@
+
+<div ng-controller="OrderController">
+	<div class="row searchbox">
+		<div class="span4">
+			<button class="btn btn-primary btn-large pull-left" ng-click="addNewOrder()">Create New Order</button>
+		</div>
+		<div class="span4">
+			<div class="all-total-price"><span>Total Price: ${{totalCost}}</span></div>
+		</div>
+		<div class="span2">
+			<input type="text" class="input-medium search-query pull-right" placeholder="Search..." ng-model="query">
+		</div>
+	</div>
+	<div class="row" ng-controller="newOrderControler">
+		<div class="span4" ng-repeat="order in orderItems">
+			<div class="order-card">
+				<div class="title">
+					<div class="btn-group">
+					    <a class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+					    {{foodType}}
+					    <span class="caret"></span>
+					    </a>
+					    <ul class="dropdown-menu">
+							<li><a ng-click="foodType='All eater'">All eater</a></li>
+							<li class="divider"></li>
+					    	<li><a ng-click="foodType='Vegetarian'">Vegetarian</a></li>
+					    	<li><a ng-click="foodType='Halal'">Halal</a></li>
+					    	<li><a ng-click="foodType='Hem'">Hem</a></li>
+					    	<li class="divider"></li>
+					    	<li><a ng-click="foodType='Custom'">Custom</a></li>
+					    </ul>
+					</div>
+					<button class="close" style="margin: 4px 8px 0 0">&times;</button>
+				</div>
+				<div class="order-details">
+					<div id="myCarousel{{order.num}}" class="carousel slide">
+		              <ol class="carousel-indicators">
+		                <li data-target="#myCarousel" data-slide-to="0" class=""></li>
+		                <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+		                <li data-target="#myCarousel" data-slide-to="2" class="active"></li>
+		              </ol>
+		              <!-- Carousel items -->
+		              <div class="carousel-inner">
+		                <div class="item"><img src="img/vegi-1.jpg" class="carousal" title="Vegetables" ng-click="addItem(order, 'vegetables', 11.20)"></div>
+		                <div class="item"><img src="img/vegi-2.jpg" class="carousal" title="Salad" ng-click="addItem(order, 'salad', 12.40)"></div>
+		                <div class="item active"><img src="img/vegi-3.jpg" class="carousal" title="Meat" ng-click="addItem(order, 'meat', 8.50)"></div>
+		              </div>
+		              <!-- Carousel nav -->
+		              <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+		              <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+            		</div>
+            		
+            		<div class="order-form">
+	            		<div class="selectedItems pull-left">
+	            			<span class="label label-info selectedTags" ng-repeat="selectedItem in order.selectedItems"><i class="icon-tag"></i>&nbsp;{{selectedItem.name}}&nbsp;</span>
+	            		</div>
+	            		<div class="addMore pull-left">
+	            			<div class="add-people-group">
+	            				<img src="img/add-people.jpg" class="img-circle" ng-click="addAmount(order)">
+	            				<span class="badge badge-info">{{order.amount}}</span>
+	            			</div>
+	            			<a href="">Personalize</a>
+	            		</div>
+	            		
+	            		<div class="total-price">
+	            			<span>${{order.totalPrise}}</span>
+	            		</div>
+	            		
+	            		<div class="order-it">
+	            			<button ng-click="placeOrder(order)" class="btn btn-success pull-right">&nbsp;&nbsp;Place Order&nbsp;&nbsp;<i class="icon-shopping-cart"></i></button>
+	            		</div>
+	            	</div>
+				</div>
+				
+				<div class="order-footer">
+					<input class="comment" placeholder="Comments..."/>
+				</div>
+			</div>		
+		</div>
+	</div>
+	
+	<div class="empty-page" ng-hide="isNewOrder">
+		<span>No orders yet</span>
+	</div>
+</div>
+
+<div class="footer">
+	
+</div>

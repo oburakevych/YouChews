@@ -1,0 +1,88 @@
+@bgColor: white;
+@borderColor: lighten(black, 50%);
+@textColor: lighten(black, 20%);
+@darkColor: lighten(black, 30%);
+@titleBgColor: #f6f8f2;
+@contrastColor: yellow;
+@focusColor: #00B30F;
+@lineColor:rgb(190, 190, 190);
+
+@empty: "";
+
+@standardFont:'Helvetica Neue';
+@handwrittingFont : "handwritting_2";
+@handwrittingFontBold : "handwritting_2_bold";
+@typewritterFont: "Helvetica Neue";
+
+// accessing JavaScript to get the current height of the body
+@clientHeight: `document.body.clientHeight`;
+
+.top_banners {
+	position:relative;
+	top: 67px;
+	z-index:800;
+	display:block;
+}
+
+.eb_container {
+	position: relative;
+	top: 60px;
+}
+
+.centered {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  margin: auto;
+}
+
+
+.focus_word{
+	color: @focusColor;
+	font-style:italic;
+	font-weight:normal;
+}
+
+.rotate0 {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+}
+.rotate-1 {
+    -webkit-transform: rotate(-1deg);
+    -moz-transform: rotate(-1deg);
+    -o-transform: rotate(-1deg);
+}
+.rotate1 {
+    -webkit-transform: rotate(1deg);
+    -moz-transform: rotate(1deg);
+    -o-transform: rotate(1deg);
+}
+.rotate-2 {
+    -webkit-transform: rotate(-2deg);
+    -moz-transform: rotate(-2deg);
+    -o-transform: rotate(-2deg);
+}
+.rotate2 {
+    -webkit-transform: rotate(2deg);
+    -moz-transform: rotate(2deg);
+    -o-transform: rotate(2deg);
+}
+.rotate-3 {
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -o-transform: rotate(-3deg);
+}
+.rotate3 {
+    -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+}
+
+.rotated_container{
+	text-align:center;
+}
